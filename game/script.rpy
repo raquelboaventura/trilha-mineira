@@ -518,4 +518,96 @@ label cena2_biblioteca:
     play sound "audio/charmes.ogg" fadein 0.5
     c "Eu {color=#00FF00}{b}odeio{/b}{/color} meu trabalho."
 
+
+    # ====== CIDADE OURO PRETO =======
+    # Continuação da Cena da Biblioteca para Ouro Preto
+    c "Sério... Todo ano a mesma coisa. Alunos de recuperação que não sabem a diferença entre Barroco e Rococó."
+
+    # Transição visual para a cidade
+    scene bg_ouropreto with fade
+    play music audio.inicio fadein 2.0
+
+    n "O ar pesado da biblioteca é substituído pelo cheiro de café passado e pedra úmida. O sol brilha forte sobre telhados coloniais."
+
+    show charme_normal at right with dissolve
+    c "Bem-vindos a Vila Rica. Ou Ouro Preto, para os íntimos do século XXI."
+
+    show julia brava at left, shake
+    j "Vila o quê? Eu estava na biblioteca! Eu quero minha casa, agora!"
+
+    show aline surpresa at center, bounce
+    s "Gente... Olha essas roupas! As pessoas parecem... antigas? Carlos, onde é que a gente se meteu?"
+
+    m "Eu não faço ideia, Aline. Mas aquele ali... você é o 'Charmes'?"
+
+    c "Em carne, osso e mau humor. Para saírem daqui, vocês precisam provar que aprenderam o que o professor pediu. Bem-vindos ao seu primeiro exame prático."
+
+    # Início do Primeiro Quiz - Ouro Preto
+    label quiz_ouropreto_1:
+        c "Vamos começar com o básico para ver se vocês não são casos perdidos. Como esta cidade era chamada antes de ser Ouro Preto?"
+
+        menu:
+            "A) Ouro Branco":
+                jump quiz_errado_op
+            "B) Vila Rica":
+                jump quiz_correto_op
+            "C) Vila Velha":
+                jump quiz_errado_op
+
+    label quiz_correto_op:
+        $ points += 1 # Adiciona ponto se você tiver definido essa variável
+        show charme_normal at right, bounce
+        c "Míseros pontos para o esforço básico. Sim, Vila Rica. Fundada pela sede de riqueza dos bandeirantes no interior das Gerais."
+        jump segue_historia_ouropreto
+
+    label quiz_errado_op:
+        show charme_normal at right, shake
+        c "Erraram. E o professor ainda disse que vocês eram os melhores alunos dele... Que decepção."
+        jump segue_historia_ouropreto
+
+    label segue_historia_ouropreto:
+        show julia seria at left
+        j "Isso é loucura. A gente está em um jogo? Carlos, faz alguma coisa!"
+        
+        m "Se for um jogo, a gente tem que ganhar para sair. Vamos manter o foco."
+        
+        # Aqui você continua a exploração da cidade...
+
+    label quiz_final_cidade:
+    scene bg biblioteca  # Ou o cenário correspondente
+    show aline feliz
+    
+    aline "Para ganharmos o último selo daqui, preciso saber se você prestou atenção!"
+    
+    menu:
+        "Qual destes elementos é fundamental para a história desta cidade?"
+        
+        "A produção artesanal de Queijo Minas":
+            $ inventory.add_item("Selo de Conhecimento")
+            show aline sorrindo
+            aline "Exato! Você realmente conhece a nossa terra."
+            jump transicao_proxima_cidade
+            
+        "A mineração de Ouro e Diamantes":
+            aline "Isso foi importante, mas não é o que nos trouxe aqui hoje. Tente de novo!"
+            jump quiz_final_cidade
+
+    label transicao_proxima_cidade:
+    hide aline
+    show julia seria
+    
+    julia "O tempo está passando. O GPS indica que a próxima parada é repleta de montanhas e novas histórias."
+    
+    narrator "Vocês se despedem da cidade atual, levando na mochila o conhecimento e os itens conquistados."
+    
+    stop music fadeout 2.0
+    scene black with dissolve
+    pause 1.0
+    
+    # Início da nova cidade
+    scene bg uni  # Exemplo de novo cenário (Universidade/Nova Cidade)
+    play music "audio/inicio.ogg"
+    
+    narrator "Bem-vindos à nova etapa da Trilha Mineira!"
+    
     return
