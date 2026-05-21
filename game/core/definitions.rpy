@@ -8,6 +8,7 @@ define p = Character(_("Professor"), color="#27bd2e", image="side") # Novo perso
 define ale = Character(_("Aleijadinho"), color="#a4713c")
 define tira = Character(_("Tiradentes"), color="#d42c2c")
 define chico = Character(_("Chico Rei"), color="#e0a92f")
+define deusa = Character(_("Deusa"), color="#ffd700")
 
 # Narrador
 define n = Character(None, window_style="narrador_window", what_style="narrador_text")
@@ -41,8 +42,20 @@ image professor cansado = "professora/professor cansado.png"
 image professor triste = "professora/professor triste.png"
 image professor feliz = "professora/professor feliz.png"
 
-# === Imagem do Charmes (placeholder) ===
-image charme_normal = "professora/professor normal.png"
+# === Imagens do Charmes ===
+image charmes normal = "images/Charmes/charmes_normal.png"
+image charmes feliz = "images/Charmes/charmes_feliz.png"
+image charmes assustado = "images/Charmes/charmes_assustado.png"
+image charmes chocado = "images/Charmes/charmes_chocado.png"
+image charmes chorando = "images/Charmes/charmes_chorando.png"
+
+# === Imagens da Deusa ===
+image deusa brava = "images/deusa/deusa_brava.png"
+image deusa orgulhosa = "images/deusa/deusa_orgulhosa.png"
+image deusa rindo = "images/deusa/deusa_rindo.png"
+
+# Fallback alias para compatibilidade
+image charme_normal = "images/Charmes/charmes_normal.png"
 
 # === Alias para Aline ===
 image aline triste = "aline/aline com triste.png"
@@ -118,17 +131,38 @@ transform laugh:
 
 # Imagens de fundo e menu
 default book = False
-image ministerio_cultura = "gui/min-cult.png"
-image pnab = "gui/pnab.png"
-image mmbg = "gui/game_menu.png"
-image escola = "images/bg aula.png"
-image cena2_biblioteca = "images/bg biblioteca.png"
-image bg biblioteca = "images/bg biblioteca.png"
-image bg_ouropreto = "images/bg_ouropreto.png"
-image bg_tiradentes = "images/bg_tiradentes.png"
-image bg_mariana = "images/bg_mariana.png"
+image ministerio_cultura = im.Scale("gui/min-cult.png", 1280, 720)
+image pnab = im.Scale("gui/pnab.png", 1280, 720)
+image mmbg = im.Scale("gui/game_menu.png", 1280, 720)
+image escola = im.Scale("images/bg aula.png", 1280, 720)
+image cena2_biblioteca = im.Scale("images/bg biblioteca.png", 1280, 720)
+image bg biblioteca = im.Scale("images/bg biblioteca.png", 1280, 720)
+image bg_ouropreto = im.Scale("images/bg_ouropreto.png", 1280, 720)
+image bg_tiradentes = im.Scale("images/bg_tiradentes.png", 1280, 720)
+image bg_mariana = im.Scale("images/bg_mariana.png", 1280, 720)
 image aleijadinho = "images/aleijadinho.png"
 image tiradentes = "images/tiradentes.png"
 image chicorei = "images/chicorei.png"
+
+default acertos = {"Ouro Preto": 0, "Tiradentes": 0, "Mariana": 0}
+default erros = {"Ouro Preto": 0, "Tiradentes": 0, "Mariana": 0}
+
+init python:
+    def obter_tipo_mineiro(total_acertos):
+        if total_acertos == 4:
+            return {
+                "titulo": "Mineiro de Ouro (Historiador de Respeito)",
+                "descricao": "Cê conhece cada ladeira, cada igreja e cada detalhe da Inconfidência! Um verdadeiro guia turístico honorário. Bão demais da conta!"
+            }
+        elif 2 <= total_acertos <= 3:
+            return {
+                "titulo": "Mineiro Dedo de Prosa",
+                "descricao": "Gosta de conversar e conhece a história de ouvir contar, mas às vezes se perde na prosa e confunde alguns fatos. Já merece um café com pão de queijo!"
+            }
+        else:
+            return {
+                "titulo": "Mineiro Desconfiado (Uai Cético)",
+                "descricao": "Aquele que desconfia de tudo, até das próprias respostas! Prefere ficar só observando antes de palpitar. Precisa viajar mais pela Trilha Mineira!"
+            }
 
 

@@ -1,4 +1,4 @@
-﻿
+
 translate None strings:
 
     # 00action_file.rpy:26
@@ -159,63 +159,63 @@ translate None strings:
 
     # 00action_file.rpy:569
     old "Page {}"
-    new "Page {}"
+    new "Folha {}"
 
     # 00action_file.rpy:569
     old "Automatic saves"
-    new "Automatic saves"
+    new "Guardados automáticos"
 
     # 00action_file.rpy:569
     old "Quick saves"
-    new "Quick saves"
+    new "Guardados ligeiros"
 
     # 00action_file.rpy:820
     old "Quick save complete."
-    new "Quick save complete."
+    new "Guardado ligeiro feito."
 
     # 00gui.rpy:234
     old "Are you sure?"
-    new "Are you sure?"
+    new "Tem certeza, sô?"
 
     # 00gui.rpy:235
     old "Are you sure you want to delete this save?"
-    new "Are you sure you want to delete this save?"
+    new "Quer apagar esse salvo memo, uai?"
 
     # 00gui.rpy:236
     old "Are you sure you want to overwrite your save?"
-    new "Are you sure you want to overwrite your save?"
+    new "Quer gravar por cima desse salvo, sô?"
 
     # 00gui.rpy:237
     old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
-    new "Loading will lose unsaved progress.\nAre you sure you want to do this?"
+    new "Se carregar, vai perder onde cê tá na prosa agora. Cê quer memo fazer isso?"
 
     # 00gui.rpy:238
     old "Are you sure you want to quit?"
-    new "Are you sure you want to quit?"
+    new "Cê quer memo meter o pé do jogo, sô?"
 
     # 00gui.rpy:239
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
+    new "Quer voltar pro menu principal? Se voltar, vai perder onde cê tá na prosa agora, uai."
 
     # 00gui.rpy:240
     old "Are you sure you want to end the replay?"
-    new "Are you sure you want to end the replay?"
+    new "Quer parar o repeteco?"
 
     # 00gui.rpy:241
     old "Are you sure you want to begin skipping?"
-    new "Are you sure you want to begin skipping?"
+    new "Quer começar a pular a prosa?"
 
     # 00gui.rpy:242
     old "Are you sure you want to skip to the next choice?"
-    new "Are you sure you want to skip to the next choice?"
+    new "Quer pular direto pra próxima escolha?"
 
     # 00gui.rpy:243
     old "Are you sure you want to skip unseen dialogue to the next choice?"
-    new "Are you sure you want to skip unseen dialogue to the next choice?"
+    new "Quer pular a prosa não lida até a próxima escolha?"
 
     # 00keymap.rpy:259
     old "Saved screenshot as %s."
-    new "Saved screenshot as %s."
+    new "Retrato salvo em %s."
 
     # 00library.rpy:142
     old "Self-voicing disabled."

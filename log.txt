@@ -1,34 +1,33 @@
-2026-05-21 15:54:09 UTC
+2026-05-21 23:05:01 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.4.1.25072401
 
-Early init took 47 ms
-Loading error handling took 35 ms
-<unknown>:1: SyntaxWarning: invalid escape sequence '\g'
-Loading script took 1121 ms
-Loading save slot metadata took 40 ms
+Early init took 48 ms
+Loading error handling took 21 ms
+Loading script took 244 ms
+Loading save slot metadata took 46 ms
 Loading persistent took 0 ms
-Running init code took 85 ms
+Running init code took 77 ms
 Loading analysis data took 9 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 17 ms
+Reloading save slot metadata took 15 ms
 Dump and make backups took 0 ms
 Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 34 ms
+Making clean stores took 1 ms
+Initial gc took 35 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 3 ms
-Init translation took 0 ms
+Creating interface object took 2 ms
+Init translation took 1 ms
 Cleaning stores took 0 ms
-Load screen analysis took 37 ms
-Analyze screens took 1 ms
+Load screen analysis took 38 ms
+Analyze screens took 2 ms
 Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
-Save bytecode took 28 ms
-Running _start took 0 ms
-Interface start took 317 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 303 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -49,185 +48,29 @@ INFO:renpy_warp_service:connection replaced, service exiting
 INFO:renpy_warp_service:service closed
 Resetting cache.
 Early init took 13 ms
-Loading error handling took 18 ms
-<unknown>:1: SyntaxWarning: invalid escape sequence '\g'
-Loading script took 450 ms
-Loading save slot metadata took 29 ms
+Loading error handling took 19 ms
+Loading script took 242 ms
+Loading save slot metadata took 28 ms
 Loading persistent took 0 ms
-Running init code took 54 ms
-Loading analysis data took 17 ms
-Analyze and compile ATL took 4 ms
-Reloading save slot metadata took 27 ms
-Backing up script files to 'C:\\Users\\raque\\AppData\\Roaming/RenPy/backups\\Trilha Mineira':
-Dump and make backups took 10 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 67 ms
-DPI scale factor: 1.000000
-Creating interface object took 1 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 23 ms
-Save screen analysis took 19 ms
-Save pyanalysis took 9 ms
-Save bytecode took 2 ms
-Running _start took 1 ms
-Interface start took 315 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'AMD Radeon RX 6500 XT'
-Version: '4.6.0 Compatibility Profile Context 26.5.2.260506'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 59, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Screen sizes: virtual=(1280, 720) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-
-Full traceback:
-  File "renpy/common/00start.rpy", line 219, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 634, in load
-    roots, log = loads(log_data)
-                 ~~~~~^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 296, in loads
-    return load(io.BytesIO(s))
-           ~~~~^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 288, in load
-    return Unpickler(f, fix_imports=True, encoding="utf-8", errors="surrogateescape").load()
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/compat/pickle.py", line 280, in find_class
-    return super().find_class(module, name)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
-
-While running game code:
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 14 ms
-Loading error handling took 30 ms
-Loading script took 476 ms
-Loading save slot metadata took 118 ms
-Loading persistent took 0 ms
-Running init code took 49 ms
-Loading analysis data took 10 ms
-Analyze and compile ATL took 3 ms
-Reloading save slot metadata took 18 ms
-Backing up script files to 'C:\\Users\\raque\\AppData\\Roaming/RenPy/backups\\Trilha Mineira':
-Dump and make backups took 9 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 59 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 16 ms
-Analyze screens took 43 ms
-Save screen analysis took 16 ms
-Save pyanalysis took 8 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 318 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'AMD Radeon RX 6500 XT'
-Version: '4.6.0 Compatibility Profile Context 26.5.2.260506'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 59, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Screen sizes: virtual=(1280, 720) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-
-Full traceback:
-  File "renpy/common/00start.rpy", line 219, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 634, in load
-    roots, log = loads(log_data)
-                 ~~~~~^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 296, in loads
-    return load(io.BytesIO(s))
-           ~~~~^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 288, in load
-    return Unpickler(f, fix_imports=True, encoding="utf-8", errors="surrogateescape").load()
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/compat/pickle.py", line 280, in find_class
-    return super().find_class(module, name)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
-
-While running game code:
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 14 ms
-Loading error handling took 22 ms
-Loading script took 444 ms
-Loading save slot metadata took 31 ms
-Loading persistent took 0 ms
-Running init code took 54 ms
-Loading analysis data took 10 ms
-Analyze and compile ATL took 3 ms
-Reloading save slot metadata took 19 ms
-Backing up script files to 'C:\\Users\\raque\\AppData\\Roaming/RenPy/backups\\Trilha Mineira':
-Dump and make backups took 10 ms
+Running init code took 47 ms
+Loading analysis data took 12 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 16 ms
+Dump and make backups took 0 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 77 ms
+Initial gc took 52 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 1 ms
-Load screen analysis took 18 ms
-Analyze screens took 42 ms
-Save screen analysis took 18 ms
-Save pyanalysis took 8 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 40 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
 Save bytecode took 0 ms
 Running _start took 1 ms
-Interface start took 315 ms
+Interface start took 294 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -243,36 +86,6 @@ INFO:renpy_warp_service:service thread started. periodically scanning ports for 
 Screen sizes: virtual=(1280, 720) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-
-Full traceback:
-  File "renpy/common/00start.rpy", line 219, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/loadsave.py", line 634, in load
-    roots, log = loads(log_data)
-                 ~~~~~^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 296, in loads
-    return load(io.BytesIO(s))
-           ~~~~^^^^^^^^^^^^^^^
-  File "renpy/compat/pickle.py", line 288, in load
-    return Unpickler(f, fix_imports=True, encoding="utf-8", errors="surrogateescape").load()
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "renpy/compat/pickle.py", line 280, in find_class
-    return super().find_class(module, name)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
-
-While running game code:
-AttributeError: Can't get attribute 'adicionar_item' on <renpy.python.StoreModule object at 0x000000000693e150>
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed

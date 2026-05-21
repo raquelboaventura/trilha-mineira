@@ -1,4 +1,4 @@
-﻿## This file contains options that can be changed to customize your game.
+## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -29,15 +29,15 @@ define config.version = "7.0"
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("""Character Art: Maka.
-Original Character Art: Maka.
+define gui.about = _("""Desenho dos boneco: Maka.
+Desenho dos boneco das antiga: Maka.
 
-Background Art: Maka, Raquel, Gemini.
-Original Background Art: Gemini
+Desenho dos cenário: Maka, Raquel, Gemini.
+Desenho dos cenário original: Gemini
 
-Music By: Carlos
+Músicas: Carlos
 
-Written By: Iara""")
+Prosa escrita por: Iara""")
 
 
 ## A short name for the game used for executables and directories in the built

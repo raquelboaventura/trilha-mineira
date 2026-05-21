@@ -5,29 +5,13 @@ label capitulo_1_prologo:
     with dissolve
     p "... então, foi assim que o Palácio da Liberdade foi construído. É uma história fascinante, mas pouco conhecida pelos mineiros de hoje."
     hide professor normal
-    python:
-        itens = ["atletico", "bolinho", "cruzeiro", 
-        "diamante", "doce de leite", "niobio", "ouro", 
-        "pao de queijo", "pastel e caldo de cana", "queijo"]
 
-        def adicionar_item():
-            random_item = renpy.random.choice(itens)
-            if random_item not in inventory.slots:
-                inventory.add_item(random_item, quantity=random.randint(1, 99))
-
-        
     play sound "audio/sino_escola.ogg" 
 
     n "O sino toca, encerrando a aula com um som estridente."
 
-    show professor normal at left, bounce
+    show professor normal at left
     with dissolve
-    $ adicionar_item()
-    $ adicionar_item()
-    $ adicionar_item()
-    $ adicionar_item()
-    $ adicionar_item()
-    $ adicionar_item()
     p "E por hoje é isso, pessoal. Dispensados. Menos vocês, {b}Eu{/b}, {b}Julia{/b} e {b}Aline{/b}. Precisamos conversar."
     hide professor normal
 
@@ -60,7 +44,7 @@ label capitulo_1_prologo:
             m "Quem fica de recuperação em história, professor? Nem sabia que isso era possível!"
 
     # Aline fala de novo
-    show aline surpresa at left, bounce
+    show aline surpresa at left
     with dissolve
     s "Quem fica de recuperação em {size=30}{i} {bt=3}história{/bt}{/i}{/size}, professor? "
     hide aline surpresa
@@ -77,7 +61,7 @@ label capitulo_1_prologo:
     p "Vocês sabem que eu detesto ter que fazer isso, mas o desempenho de vocês esse semestre foi {move}péssimo{/move}. {b}Aline{/b} ficou fazendo crochê e não prestou atenção no trabalho que foi feito em sala de aula."
     hide professor pensativo
 
-    show professor triste at left, bounce2
+    show professor triste at left
     with dissolve
     p "{b}Julia{/b} entregou pelo menos umas duas provas... ia dizer em branco, mas elas estavam {size=30}{b}sujas de terra.{/b}{/size} E isso porque nem tem terra dentro da sala!"
     hide professor triste
@@ -113,7 +97,7 @@ label capitulo_1_prologo:
 
     m "Não, pessoal! Essa é uma expressão que significa que agora não adianta mais. Tipo “não adianta chorar pelo leite derramado”. Ele quis dizer que estamos mesmo ferrados."
 
-    show aline timida at left, bounce
+    show aline timida at left
     with dissolve
     s "Ah."
     hide aline timida
@@ -140,7 +124,7 @@ label capitulo_1_prologo:
     s "Antes estava ruim, agora piorou..."
     hide aline super_saiaji
 
-    show professor feliz at left, laugh
+    show professor feliz at left
     with dissolve
     p "Pensem nisso como uma forma de fazer novos amigos, que tal? Sei que vocês vão se dar bem, sem dúvida alguma."
     hide professor feliz
@@ -353,7 +337,7 @@ label cena2_biblioteca:
     with dissolve
 
     pause .5
-    play sound "audio/charmes.ogg" fadein 0.5
+    play music "audio/charmes.ogg" fadein 0.5
     c "Eu {color=#00FF00}{b}odeio{/b}{/color} meu trabalho."
 
     jump capitulo_2_ouro_preto

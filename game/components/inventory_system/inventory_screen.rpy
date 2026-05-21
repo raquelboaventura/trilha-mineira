@@ -29,12 +29,15 @@ init python:
 
 screen tooltip():
     if tooltip_text != "":
+        $ tooltip_x = tooltip_pos[0]
+        $ anchor_x = 1.0 if tooltip_x > 640 else 0.0
+        $ offset_x = -15 if tooltip_x > 640 else 15
         frame:
             # background Frame("gui/tooltip_bg.png", 10, 10)  # opcional, pode trocar por uma cor
             background "#0008"
-            xanchor 0.0
+            xanchor anchor_x
             yanchor 1.0
-            xoffset 15
+            xoffset offset_x
             yoffset -25
             
             xpos tooltip_pos[0]
@@ -57,40 +60,41 @@ screen inventory():
                 action Hide("inventory")
 
         vbox:
+            null height 95
             style "inventory_container"
             text "Trem de levar coisa" style "inventory_title"
 
             viewport id "vp":
-                ysize 230
+                ysize 120
                 draggable True
                 mousewheel True
                 scrollbars "vertical"
                 vscrollbar_xsize 8
-                vscrollbar_ysize 290
-                vscrollbar_ypos -70
-                vscrollbar_xpos -200
+                vscrollbar_ysize 120
+                vscrollbar_ypos 0
+                vscrollbar_xpos 405
                 vscrollbar_base_bar "components/inventory_system/images/gui/inv_vscrollbar_base_bar.png" 
                 vscrollbar_thumb "components/inventory_system/images/gui/inv_vscrollbar_thumb.png"
                 vscrollbar_unscrollable "hide"
 
-                vpgrid cols 4:
+                vpgrid cols 3:
                     style "inventory_grid"
 
                     for slot in range(inventory.slot_count):
                         frame:
-                            maximum(90, 90)
+                            xysize (120, 120)
                             if inventory.is_slot_unlocked(slot):
-                                background Image("components/inventory_system/images/gui/slot_bg.png")
+                                background Transform("components/inventory_system/images/gui/slot_bg.png", xysize=(120, 120))
                                 if inventory.slots[slot]:
                                     for item, quantity in inventory.slots[slot].items():
                                         imagebutton:
                                             idle Transform(
                                                 Image(f"components/inventory_system/images/icons/{item}.png"),
-                                                xysize=(35, 35)
+                                                xysize=(80, 80)
                                             )
                                             hover Transform(
                                                 Image(f"components/inventory_system/images/icons/{item}.png"),
-                                                xysize=(35, 35)
+                                                xysize=(80, 80)
                                             )
                                             hovered [
                                                 SetVariable("tooltip_text", descricoes.get(item, f"{item.replace('_', ' ').title()} — Sem descrição disponível.")),
@@ -105,8 +109,8 @@ screen inventory():
                                             action NullAction()
                                             xalign 0.5
                                             yalign 0.5
-                                            xsize 50
-                                            ysize 50
+                                            xsize 80
+                                            ysize 80
 
                                         $ Inv_item_name = item.replace('_', ' ')
                                         $ Inv_item_quantity = f"x{quantity}"   
@@ -114,7 +118,7 @@ screen inventory():
                                         text Inv_item_name style "inventory_item_name"
                                         text Inv_item_quantity style "inventory_item_quantity"
                             else:
-                                background Image("components/inventory_system/images/gui/locked_slot_bg.png") 
+                                background Transform("components/inventory_system/images/gui/locked_slot_bg.png", xysize=(120, 120)) 
     if tracking_tooltip:
         timer 0.03 repeat True action SetVariable("tooltip_pos", [p + o for p, o in zip(renpy.get_mouse_pos(), (20, -10))])
     use tooltip

@@ -4,7 +4,7 @@
 # 💡 Here we create the actual inventory! It's like giving the player a backpack.
 # Initializing the inventory system in Ren'Py. The most common approach is to initialize this variable within the Script RPY file.
 # There are two parameters in the default inventory variable: `slot_count=21` (total slots) and `unlocked_slots=7` (initial unlocked slots).  
-default inventory = Inventory(slot_count=10, unlocked_slots=6) # we just introduce the Inventory system to Renpy.
+default inventory = Inventory(slot_count=3, unlocked_slots=3) # we just introduce the Inventory system to Renpy.
 
 
 # ================================ 
@@ -21,7 +21,7 @@ init python:
 
         def add_item(self, item, quantity=1):
             if self.unlocked_slots == 0:
-                pm_notify("No unlocked slots available.", sound_type="error")
+                pm_notify("Uai, tem espaço liberado pra guardar esse trem não, sô!", sound_type="error")
                 return
 
             remaining_quantity = quantity
@@ -48,11 +48,11 @@ init python:
             
             # If there are still remaining items, show a notification
             if remaining_quantity > 0:
-                pm_notify(f"Could not add {remaining_quantity} {item} - no slots available.", sound_type="error")
+                pm_notify(f"Dá pra guardar mais {remaining_quantity} {item} não, cabe mais nada aqui, uai!", sound_type="error")
 
         def remove_item(self, item, quantity=1):
             if quantity <= 0:
-                pm_notify("Invalid quantity to remove.", sound_type="error")
+                pm_notify("Quantidade esquisita pra tirar da sacola, uai!", sound_type="error")
                 return
 
             original_quantity = quantity
@@ -69,10 +69,10 @@ init python:
                         break
 
             if quantity > 0:
-                pm_notify(f"Could not fully remove {original_quantity} {item} - insufficient quantity.", sound_type="error")
+                pm_notify(f"Consigo tirar {original_quantity} {item} tudo não, cê nem tem essa quantidade guardada, sô!", sound_type="error")
                 self.sort_inventory()  # Call sort_inventory after removal
             else:
-                pm_notify(f"{original_quantity - quantity} {item} Removed.", sound_type="remove")
+                pm_notify(f"{original_quantity - quantity} {item} tirado da sacola com sucesso!", sound_type="remove")
                 self.sort_inventory()  # Call sort_inventory after removal
 
         def sort_inventory(self):
@@ -90,12 +90,12 @@ init python:
         def increase_slot_count(self, additional_slots):
             self.slot_count += additional_slots
             self.slots.extend([{} for _ in range(additional_slots)])
-            pm_notify(f"Slot count increased by {additional_slots}!", sound_type="success")
+            pm_notify(f"Eba! A sacola aumentou pra caber mais {additional_slots} trem!", sound_type="success")
 
 
         def unlock_slots(self, count):
             self.unlocked_slots = min(self.slot_count, self.unlocked_slots + count)
-            pm_notify(f"Unlocked {count} new slots.", sound_type="success")
+            pm_notify(f"Liberou mais {count} espaço pra guardar trem na sacola!", sound_type="success")
 
 
         def is_slot_unlocked(self, slot):
@@ -106,9 +106,9 @@ init python:
             if count <= self.unlocked_slots:
                 self.unlocked_slots -= count
                 # pm_notify(f"Locked {count} slots.", sound_type="error")
-                pm_notify(" Warning: slots are locked!", sound_type="error")
+                pm_notify("Atenção, sô! Os espaços da sacola tão trancado!", sound_type="error")
             else:
-                pm_notify("Not enough unlocked slots to lock.", sound_type="error")
+                pm_notify("Tem nem espaço aberto pra trancar, uai!", sound_type="error")
 
         def get_items(self):
             return self.slots
@@ -120,3 +120,14 @@ init python:
                 if item in slot:
                     total += slot[item]
             return total >= quantity  # Returns True if inventory has at least 'quantity' of item
+
+    itens = ["atletico", "bolinho", "cruzeiro", 
+    "diamante", "doce de leite", "niobio", "ouro", 
+    "pao de queijo", "pastel e caldo de cana", "queijo"]
+
+    def adicionar_item():
+        disponiveis = [i for i in itens if not inventory.has_item(i)]
+        if disponiveis:
+            random_item = renpy.random.choice(disponiveis)
+            inventory.add_item(random_item, quantity=1)
+

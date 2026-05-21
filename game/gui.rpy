@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -85,8 +85,8 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/bg.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = im.Scale("gui/bg.png", 1280, 720)
+define gui.game_menu_background = im.Scale("gui/game_menu.png", 1280, 720)
 
 ## The color of the main menu.
 define gui.main_menu_text_color = "#363636"
@@ -104,10 +104,9 @@ define gui.textbox_height = 210
 ## center, and 1.0 is the bottom.
 define gui.textbox_yalign = 0.98
 
-
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 200
+define gui.name_xpos = 80
 define gui.name_ypos = -30
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
@@ -132,11 +131,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 300
+define gui.dialogue_xpos = 80
 define gui.dialogue_ypos = 65
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 700
+define gui.dialogue_width = 750
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.

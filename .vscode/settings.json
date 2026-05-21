@@ -156,7 +156,14 @@
                 "settings": {
                     "foreground": "#ff0000"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#00ff00",
+                "settings": {
+                    "foreground": "#00ff00"
+                }
             }
         ]
-    }
+    },
+    "renpyWarp.sdkPath": "c:\\renpy-8.4.1-sdk"
 }
