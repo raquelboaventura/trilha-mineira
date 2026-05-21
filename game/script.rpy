@@ -1,3 +1,4 @@
+
 # O label splashscreeexistente foi mantido
 
 label splashscreen:

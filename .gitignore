@@ -16,11 +16,12 @@ __pycache__/
 *.zip
 *.app
 *.dmg
+*.save
 
 # Ignorar arquivos de projeto do editor
 # (Exemplo: Visual Studio Code)
 .vscode/
-
+.mp3
 # Arquivos de log e temporários
 *.log
 *.tmp
@@ -47,3 +48,4 @@ game/menu_screen.rpy
 game/menu_screen.rpyc
 game/sound_viewer.rpy
 game/sound_viewer.rpyc
+game/saves/quick-2-LT1.save
