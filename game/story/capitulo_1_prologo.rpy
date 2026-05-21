@@ -138,7 +138,7 @@ label capitulo_1_prologo:
     show aline super_saiaji at left
     with dissolve
     s "Antes estava ruim, agora piorou..."
-    hide aline assustada
+    hide aline super_saiaji
 
     show professor feliz at left, laugh
     with dissolve

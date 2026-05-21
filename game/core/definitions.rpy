@@ -39,6 +39,13 @@ image professor normal = "professora/professor normal.png"
 image professor pensativo = "professora/professor pensativo.png"
 image professor cansado = "professora/professor cansado.png"
 image professor triste = "professora/professor triste.png"
+image professor feliz = "professora/professor feliz.png"
+
+# === Imagem do Charmes (placeholder) ===
+image charme_normal = "professora/professor normal.png"
+
+# === Alias para Aline ===
+image aline triste = "aline/aline com triste.png"
 
 define fastmove = MoveTransition(.2)
 
@@ -50,7 +57,7 @@ define audio.books_fall = "audio/books_fall.ogg"   # livros caindo da estante
 define audio.whisper = "audio/whisper.ogg"         # voz misteriosa de Charme
 define audio.suspense = "audio/suspense.ogg"       # música ambiente tensa
 define audio.title = "audio/inicio.ogg"
-define audio.sino = "audio/sino escola.ogg"
+define audio.sino = "audio/sino_escola.ogg"
 
 # Efeitos
 
@@ -116,6 +123,7 @@ image pnab = "gui/pnab.png"
 image mmbg = "gui/game_menu.png"
 image escola = "images/bg aula.png"
 image cena2_biblioteca = "images/bg biblioteca.png"
+image bg biblioteca = "images/bg biblioteca.png"
 image bg_ouropreto = "images/bg_ouropreto.png"
 image bg_tiradentes = "images/bg_tiradentes.png"
 image bg_mariana = "images/bg_mariana.png"
