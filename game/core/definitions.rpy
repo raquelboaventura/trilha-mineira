@@ -8,7 +8,8 @@ define p = Character(_("Professor"), color="#27bd2e", image="side") # Novo perso
 define ale = Character(_("Aleijadinho"), color="#a4713c")
 define tira = Character(_("Tiradentes"), color="#d42c2c")
 define chico = Character(_("Chico Rei"), color="#e0a92f")
-define deusa = Character(_("Deusa"), color="#ffd700")
+define deusa = Character(_("Deusa"), color="#645603")
+define ataide = Character(_("Mestre Ataíde"), color="#01490d")
 
 # Narrador
 define n = Character(None, window_style="narrador_window", what_style="narrador_text")
@@ -143,18 +144,19 @@ image bg_mariana = im.Scale("images/bg_mariana.png", 1280, 720)
 image aleijadinho = "images/aleijadinho.png"
 image tiradentes = "images/tiradentes.png"
 image chicorei = "images/chicorei.png"
+image mestre_ataide = "images/mestre_ataide.png"
 
 default acertos = {"Ouro Preto": 0, "Tiradentes": 0, "Mariana": 0}
 default erros = {"Ouro Preto": 0, "Tiradentes": 0, "Mariana": 0}
 
 init python:
     def obter_tipo_mineiro(total_acertos):
-        if total_acertos == 4:
+        if total_acertos == 6:
             return {
                 "titulo": "Mineiro de Ouro (Historiador de Respeito)",
                 "descricao": "Cê conhece cada ladeira, cada igreja e cada detalhe da Inconfidência! Um verdadeiro guia turístico honorário. Bão demais da conta!"
             }
-        elif 2 <= total_acertos <= 3:
+        elif 3 <= total_acertos <= 5:
             return {
                 "titulo": "Mineiro Dedo de Prosa",
                 "descricao": "Gosta de conversar e conhece a história de ouvir contar, mas às vezes se perde na prosa e confunde alguns fatos. Já merece um café com pão de queijo!"

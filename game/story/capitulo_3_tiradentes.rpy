@@ -1,6 +1,6 @@
 label capitulo_3_tiradentes:
     scene bg_tiradentes with fade
-    play music audio.suspense fadein 2.0
+    play music "audio/charmes.ogg" fadein 2.0
     
     n "A tontura da viagem no tempo e no espaço passa aos poucos. Agora, as ruas de pedra parecem um pouco diferentes. O ar carrega um clima tenso, quase como uma conspiração silenciosa."
 
@@ -55,11 +55,11 @@ label capitulo_3_tiradentes:
         hide deusa
 
         menu:
-            "A) A cobrança abusiva de impostos, especificamente a Derrama.":
+            "A) A Derrama":
                 jump quiz_correto_td
-            "B) A invasão de tropas francesas e espanholas no Brasil.":
+            "B) A Lei de Abolição do Tráfico de Escravizados pela Coroa":
                 jump quiz_errado_td
-            "C) A falta de incentivo à produção local de queijo e café.":
+            "C) A proibição da abertura de novas igrejas católicas na capitania":
                 jump quiz_errado_td
 
     label quiz_correto_td:
@@ -106,20 +106,57 @@ label capitulo_3_tiradentes:
         tira "Sim. Sonhamos com uma república independente. Meu destino foi trágico, mas minhas ideias viveram."
         hide tiradentes with dissolve
         
-        show charmes normal at left
+        show charmes normal at left with dissolve
         c "Belo discurso, não acham? Muito bem. Vocês conseguiram provar que sabem o básico sobre as motivações desta cidade."
-        c "Porém, saber as causas não é a mesma coisa que conhecer os sacrifícios. Ainda há muito o que aprender em Tiradentes antes de ganharem o próximo selo."
+        c "Mas antes de partirem para a próxima parada da Trilha, quero ver se conhecem a história do homem por trás do mito."
+        hide charmes
 
-        n "Charmes dá um sorriso torto, e a figura dele começa a desaparecer lentamente nas sombras de um beco."
+        label quiz_tiradentes_2:
+            show charmes normal at left
+            c "Além de atuar como Alferes (militar), qual era o principal ofício ou habilidade prática de Joaquim José da Silva Xavier que originou a sua famosa alcunha?"
+            hide charmes
 
-        show charmes feliz at left
-        c "Boa sorte, estudantes. Vocês vão precisar."
-        hide charmes with dissolve
+            show deusa orgulhosa at left with dissolve
+            deusa "A dica está no próprio nome dele, queridos! O apelido que ficou para a história revela sua profissão prática!"
+            hide deusa
 
-        n "Aline, Julia e você se olham. Mas não há tempo para descanso. O chão volta a tremer e a luz envolve vocês novamente..."
-        
-        stop music fadeout 2.0
-        scene black with dissolve
-        pause 1.0
+            menu:
+                "A) Ele atuava como dentista prático, além de aplicar curativos e extrair dentes":
+                    $ acertos["Tiradentes"] += 1
+                    $ points += 1
+                    show aline feliz at left
+                    s "Exato! Daí veio o apelido 'Tiradentes'!"
+                    hide aline feliz
+                    jump transicao_final_tiradentes
 
-        jump capitulo_4_mariana
+                "B) Ele era um ferreiro renomado que fabricava as espadas do exército colonial":
+                    $ erros["Tiradentes"] += 1
+                    show aline com_fome_com_duvida at left
+                    s "Humm, acho que não. Um ferreiro não seria chamado de Tiradentes..."
+                    hide aline com_fome_com_duvida
+                    jump transicao_final_tiradentes
+
+                "C) Ele trabalhava como engenheiro oficial encarregado de desenhar os mapas das minas":
+                    $ erros["Tiradentes"] += 1
+                    show aline com_fome_com_duvida at left
+                    s "Não faria muito sentido para o apelido dele, né?"
+                    hide aline com_fome_com_duvida
+                    jump transicao_final_tiradentes
+
+        label transicao_final_tiradentes:
+            show charmes normal at left with dissolve
+            c "Parece que vocês estão se esforçando. O segundo selo está garantido."
+            c "Mas o teste final de vocês em Mariana será o verdadeiro divisor de águas. Não relaxem."
+            hide charmes
+
+            n "Charmes dá um sorriso torto, e a figura dele começa a desaparecer nas sombras."
+
+            show julia seria at left with dissolve
+            j "O chão está tremendo de novo! Se segurem!"
+            hide julia seria
+
+            stop music fadeout 2.0
+            scene black with dissolve
+            pause 1.0
+
+            jump capitulo_4_mariana

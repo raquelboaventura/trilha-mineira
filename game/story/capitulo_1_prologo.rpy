@@ -1,4 +1,5 @@
 label capitulo_1_prologo:
+    play music "audio/escola.ogg" fadein 2.0
     # --- Início da nova história: Cena 1 - Sala de aula ---
     # Professor fala
     show professor normal at left, slowbounce
@@ -6,13 +7,13 @@ label capitulo_1_prologo:
     p "... então, foi assim que o Palácio da Liberdade foi construído. É uma história fascinante, mas pouco conhecida pelos mineiros de hoje."
     hide professor normal
 
-    play sound "audio/sino_escola.ogg" 
+    play sound "audio/sino_escola.ogg" volume 0.5
 
     n "O sino toca, encerrando a aula com um som estridente."
 
     show professor normal at left
     with dissolve
-    p "E por hoje é isso, pessoal. Dispensados. Menos vocês, {b}Eu{/b}, {b}Julia{/b} e {b}Aline{/b}. Precisamos conversar."
+    p "E por hoje é isso, pessoal. Dispensados. Menos vocês, {b}[player_name]{/b}, {b}Julia{/b} e {b}Aline{/b}. Precisamos conversar."
     hide professor normal
 
     # Aline fala
@@ -214,7 +215,7 @@ label capitulo_1_prologo:
     show text "Duas semanas! É melhor começar logo!" at truecenter with dissolve
     with Pause(2)
     n "Julia enterra a cabeça nas mãos, choramingando pela décima quinta vez. Sim, décima quinta. Aline contou cada uma delas e cronometrou o intervalo entre elas."
-    play music "audio/rain.ogg" fadein 1.0 loop
+    play music "audio/rain.ogg" fadein 1.0 loop volume 0.3
     n "Uma chuva pesada caia do lado de fora, raios e trovões retumbavam e iluminavam a tarde sombria. E, como se a tarde já não estivesse sinistra o bastante, as luzes piscaram pela sexta vez. Sim, Aline contou isso também."
 
     # === CENA 2 – Biblioteca ===
@@ -222,7 +223,7 @@ label cena2_biblioteca:
 
     # Som ambiente de chuva e trovões
 
-    play sound "audio/thunder.ogg"
+    play sound "audio/thunder.ogg" volume 0.4
 
     scene bg biblioteca with fade
 
@@ -303,7 +304,7 @@ label cena2_biblioteca:
 
 
     # Raio e trovão
-    play sound "audio/thunder_strong.ogg"
+    play sound "audio/thunder_strong.ogg" volume 0.5
     with flash
     with vpunch
 
@@ -312,8 +313,8 @@ label cena2_biblioteca:
     m "Mas o quê..."
 
     # Livros caindo e vento
-    play sound "audio/books_fall.ogg"
-    play sound "audio/vento.ogg"
+    play sound "audio/books_fall.ogg" volume 0.5
+    play sound "audio/vento.ogg" volume 0.4
     with hpunch
     with vpunch
 

@@ -5,7 +5,7 @@ label capitulo_2_ouro_preto:
 
     # Transição visual para a cidade
     scene bg_ouropreto with fade
-    play music audio.inicio fadein 2.0
+    play music "audio/charmes.ogg" fadein 2.0
 
     n "O ar pesado da biblioteca é substituído pelo cheiro de café passado e pedra úmida. O sol brilha forte sobre telhados coloniais."
 
@@ -61,7 +61,7 @@ label capitulo_2_ouro_preto:
                 jump quiz_errado_op
             "B) Vila Rica":
                 jump quiz_correto_op
-            "C) Vila Velha":
+            "C) Arraial do Tijuco":
                 jump quiz_errado_op
 
     label quiz_correto_op:
@@ -112,33 +112,53 @@ label capitulo_2_ouro_preto:
         ale "A história é feita de pedra, sabão e muito suor. Mas me digam, o que vieram aprender sobre nossa riqueza?"
         hide aleijadinho with dissolve
 
+        n "Após o mestre da escultura se afastar, vocês percebem um homem com uma postura régia e olhar determinado subindo a ladeira."
+
+        show chicorei at left with dissolve
+        chico "Saudações, jovens. Eu sou Francisco, mas muitos aqui me chamam de Chico Rei."
+        hide chicorei
+
+        show aline surpresa at left
+        s "Chico Rei! O rei africano que conquistou a própria liberdade e a de seus súbditos trabalhando nas minas de Vila Rica!"
+        hide aline surpresa
+
+        show chicorei at left
+        chico "Isso mesmo, jovem. A liberdade é o maior tesouro de um povo. Com muito suor e persistência na mina da Encardideira, compramos nossa alforria."
+        hide chicorei with dissolve
+
 label quiz_final_cidade:
     scene bg_ouropreto
-    show aline feliz at left
-    
-    s "Para ganharmos o último selo de Ouro Preto, precisamos responder uma última coisa!"
-    hide aline feliz
-    
+    show chicorei at left with dissolve
+    chico "Vejamos se vocês sabem como conseguimos enganar a fiscalização colonial para alcançar a liberdade."
+    hide chicorei
+
     show deusa orgulhosa at left with dissolve
-    deusa "Lembrem-se do que Aleijadinho e o povo desta terra vieram extrair nas montanhas de Vila Rica. Essa é a chave!"
+    deusa "Esta história é incrível! Prestem muita atenção na forma criativa que Chico Rei e seu povo usavam para transportar o ouro sem que os guardas percebessem!"
     hide deusa
-    
+
     menu:
-        "Qual a principal riqueza que atraiu tanta gente para esta região?"
-        
-        "A mineração de Ouro":
+        "Qual estratégia Chico Rei e os seus súbditos utilizaram para contrabandear o ouro e comprar as suas alforrias?"
+
+        "A) Escondiam o ouro em pó nos cabelos e sob as unhas durante o trabalho":
             $ acertos["Ouro Preto"] += 1
             $ points += 1
-            show aline sorrindo at left
-            s "Exato! Foi a corrida do ouro que fez Vila Rica crescer tanto!"
-            hide aline sorrindo
+            show chicorei at left with dissolve
+            chico "Exato! Lavávamos os cabelos nas pias batismais para recuperar o ouro em pó. Assim, nossa fé e astúcia nos libertaram!"
+            hide chicorei
             jump transicao_proxima_cidade
-            
-        "O plantio de café":
+
+        "B) Comercializavam queijo e café escondidos da Coroa":
             $ erros["Ouro Preto"] += 1
-            show aline brava at left
-            s "Não, o café foi importante em outras épocas e regiões! Aqui o foco era o ouro!"
-            hide aline brava
+            show chicorei at left with dissolve
+            chico "Não. Naquela época, o café nem era cultivado por aqui, e a vigilância nas minas era direta e rigorosa."
+            hide chicorei
+            jump transicao_proxima_cidade
+
+        "C) Compravam diamantes falsificados no Distrito Diamantino":
+            $ erros["Ouro Preto"] += 1
+            show chicorei at left with dissolve
+            chico "Errado. O Distrito Diamantino fica muito distante daqui, e nosso trabalho era focado no ouro de Vila Rica."
+            hide chicorei
             jump transicao_proxima_cidade
 
 label transicao_proxima_cidade:

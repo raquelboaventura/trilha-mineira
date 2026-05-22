@@ -340,9 +340,8 @@ screen main_menu():
         
         # BOTÕES DE REDES SOCIAIS (Note o xpos -890, que pode estar muito fora da tela dependendo da sua resolução)
         # Ajustei o zoom de Transform para 0.7 para que fiquem um pouco maiores.
-        imagebutton auto "gui/button/itchio_%s.svg" action ShowMenu("about") xpos -890 ypos -350 at Transform(zoom=0.7)
-        imagebutton auto "gui/button/steam_%s.svg" action ShowMenu("about") xpos -890 ypos -320 at Transform(zoom=0.7)
-        imagebutton auto "gui/button/instagram_%s.svg" action ShowMenu("about") xpos -890 ypos -290 at Transform(zoom=0.7)
+        imagebutton auto "gui/button/itchio_%s.svg" action OpenURL("https://raquelboaventura.itch.io/trilha-mineira") xpos -890 ypos -350 at Transform(zoom=0.7)
+        imagebutton auto "gui/button/instagram_%s.svg" action OpenURL("https://www.instagram.com/trilha.mineira") xpos -890 ypos -290 at Transform(zoom=0.7)
 
 
 ## Navigation screen ###########################################################
@@ -868,6 +867,7 @@ style radio_button_text:
     properties gui.text_properties("radio_button")
 
 style check_vbox:
+    xsize 380
     spacing gui.pref_button_spacing
 
 style check_button:

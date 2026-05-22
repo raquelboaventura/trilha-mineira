@@ -219,3 +219,14 @@ define build.itch_project = "renpytom/trilha-mineira"
 
 # Enable the console.
 define config.console = True
+
+## Mouse Cursor Configuration ##################################################
+##
+## Defines custom cursor images for the game.
+## The coordinates (0, 0) specify the hotspot (click target) of the cursor.
+
+define config.mouse = {
+    'default': [ ('gui/mouse-hand.png', 0, 0) ],
+    'button': [ ('gui/mouse-hand-click.png', 0, 0) ]
+}
+

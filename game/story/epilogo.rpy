@@ -1,6 +1,7 @@
 label epilogo:
     scene bg biblioteca with fade
-    play music audio.rain fadein 2.0
+    play music audio.title fadein 2.0
+    play sound audio.rain fadein 2.0 loop volume 0.3
     
     n "O som da chuva forte bate contra a janela. Vocês estão de volta à biblioteca da escola. Tudo está exatamente como antes."
 
@@ -27,8 +28,10 @@ label epilogo:
     m "Acho que o professor tinha razão. A gente só precisava de 'força de vontade' e uma 'máquina do tempo'."
     
     stop music fadeout 2.0
+    stop sound fadeout 2.0
     scene escola with fade
-    play music audio.sino fadein 1.0
+    play sound audio.sino volume 0.5
+    play music audio.title fadein 1.0
     
     n "Duas semanas depois, na sala de aula."
     
